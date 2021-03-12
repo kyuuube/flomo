@@ -17,10 +17,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-    font-family: 'Redressed', 'PingFang SC', Helvetica, Arial, sans-serif;
-    outline: none;
-}
 
 html, body {
     height: 100%;

@@ -1,0 +1,25 @@
+.bf-controlbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: none;
+    padding: 0 8px 6px 8px;
+    font-weight: 300;
+}
+.bf-controlbar .control-item {
+    margin: 0;
+    font-size: 14px;
+    height: 28px;
+}
+
+.bf-controlbar .control-item.button {
+    font-size: 12px;
+    min-width: 20px;
+}
+
+.bf-controlbar .control-item.button i:before {
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+}
