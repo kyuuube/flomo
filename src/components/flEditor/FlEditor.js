@@ -12,10 +12,10 @@ function FlEditor() {
         content = htmlContent.replace(/<[^>]+>/gi, '');
     }
     let buttonClass = !content
-        ? 'absolute bottom-5 right-2 bg-green-600 hover:bg-green-500 bg-opacity-50 text-white py-2 px-4 rounded text-xs'
-        : 'absolute bottom-5 right-2 bg-green-500 text-white py-2 px-4 rounded text-xs';
+        ? 'absolute bottom-5 right-6 bg-green-600 hover:bg-green-500 bg-opacity-50 text-white py-2 px-4 rounded text-xs'
+        : 'absolute bottom-5 right-6 bg-green-500 text-white py-2 px-4 rounded text-xs';
     return (
-        <div  className="relative h-28 pt-3 pb-3">
+        <div  className="relative h-28 pt-3 pb-3 px-4">
             <BraftEditor
                 className=" border-2 border-gray-300 bg-white rounded-lg"
                 contentStyle={{ height: 'auto' }}

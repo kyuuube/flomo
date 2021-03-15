@@ -1,11 +1,13 @@
 import FlUserHeader from '../flUserHeader/FlUserHeader';
 import FlStatistic from '../flStatistic/FlStatistic';
+import FlCalendarGraph from '../flCalendarGraph/FlCalendarGraph';
 import FLTag from '../flTag/FLTag';
 function FlAside() {
     return (
         <div>
             <FlUserHeader />
             <FlStatistic />
+            <FlCalendarGraph />
             <div className="w-full">
                 <div className="flex bg-green-400 text-white rounded-lg w-full py-2 pl-7 text-sm cursor-pointer">
                     <i className="ri-layout-grid-fill pr-2" />

@@ -1,0 +1,18 @@
+.memo-item .ant-image {
+    border: 1px solid #e6e6e6;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 12px;
+    margin-top: 6px;
+    object-fit: fill;
+}
+
+.memo-item .ant-image-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+}
+
+.memo-item .ant-image-mask {
+    border-radius: 4px;
+}

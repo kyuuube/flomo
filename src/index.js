@@ -4,7 +4,7 @@ import './index.css';
 import 'remixicon/fonts/remixicon.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import '../src/mock/memoApi'
 ReactDOM.render(
   <React.StrictMode>
     <App />
