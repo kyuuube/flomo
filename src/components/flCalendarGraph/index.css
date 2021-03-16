@@ -9,7 +9,7 @@
 .calendar-graph .day {
     width: 14px;
     height: 14px;
-    background: #EFEFEF;
+/*     background: #EFEFEF; */
     border: 1px solid transparent;
     border-radius: 2px;
     margin-bottom: 4px;

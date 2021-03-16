@@ -5,7 +5,7 @@ import './index.css'
 // placeholder 的功能需要图片服务支持
 // 基本图像裁剪也可以由图片服务处理
 function FlMemoItem({ item }) {
-  return <div className='memo-item bg-white py-3 px-3 mb-3 rounded-lg hover:shadow-md cursor-pointer'>
+  return <div className='memo-item bg-white py-3 px-3 mb-3 rounded-lg hover:shadow-md cursor-pointer dark:bg-gray-600'>
     <div className='flex justify-between'>
       <div className='text-xs text-gray-400 flex content-center items-center'>{ item.createTime }</div>
       <div className='flex content-center'><i className="ri-more-line" /></div>
@@ -16,7 +16,7 @@ function FlMemoItem({ item }) {
           return <span key={index} className='bg-blue-100 text-blue-400 text-xm rounded px-1 py-0.5 mr-1.5'>#{tag}</span>
         })
       }
-      <span>{ item.memo }</span>
+      <span className='dark:text-white'>{ item.memo }</span>
     </div>
     <div className='pt-2'>
       {

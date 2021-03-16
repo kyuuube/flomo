@@ -1,6 +1,6 @@
 function FlInput() {
     return (
-        <div className="mt-1 relative rounded-md shadow-sm bg-gray-100 rounded-lg px-5 w-34 h-10">
+        <div className="mt-1 relative rounded-md shadow-sm bg-gray-100 rounded-lg px-5 w-34 h-10 dark:bg-gray-600">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <span className="sm:text-sm">
                     <i className="ri-search-2-line text-sm text-gray-300" />
@@ -10,7 +10,7 @@ function FlInput() {
                 type="text"
                 name="price"
                 id="price"
-                className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-3 pr-12 sm:text-sm border-gray-300 rounded-md bg-gray-100 rounded-lg px-5 w-34 h-10"
+                className="focus:ring-indigo-500 focus:border-indigo-500 outline-none block w-full pl-3 pr-12 sm:text-sm border-gray-300 rounded-md bg-gray-100 dark:bg-gray-600 rounded-lg px-5 w-34 h-10"
             />
             {/*<div className="absolute inset-y-0 right-0 flex items-center">*/}
             {/*  <label htmlFor="currency" className="sr-only">Currency</label>*/}
