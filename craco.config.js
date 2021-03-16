@@ -13,24 +13,24 @@ module.exports = {
         },
     ],
     webpack: {
-        devServer: {
-            /* Any devServer configuration options: https://webpack.js.org/configuration/dev-server/#devserver. */
-            compress: true,
-            open: false,
-            port: 5000,
-            // proxy: [{
-            //     context: ['/auth', '/api'],
-            //     target: apiBaseUrl,
-            //     pathRewrite: {
-            //         '^/auth': 'auth',
-            //         '^/api': 'api'
-            //     }
-            // }]
-        },
         plugins: [
             // 查看打包的进度
             new SimpleProgressWebpackPlugin(),
         ],
+    },
+    devServer: {
+        /* Any devServer configuration options: https://webpack.js.org/configuration/dev-server/#devserver. */
+        compress: true,
+        open: false,
+        port: 5000,
+        // proxy: [{
+        //     context: ['/auth', '/api'],
+        //     target: apiBaseUrl,
+        //     pathRewrite: {
+        //         '^/auth': 'auth',
+        //         '^/api': 'api'
+        //     }
+        // }]
     },
     style: {
         postcss: {
