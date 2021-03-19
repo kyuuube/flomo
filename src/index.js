@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
 import './index.css';
 import 'remixicon/fonts/remixicon.css'
+import store from './store'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import '../src/mock/memoApi'
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 

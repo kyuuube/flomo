@@ -31,11 +31,11 @@ function FlCalendarGraph() {
                         {item.map((day, index) => {
                             const dayStyle = {
                               borderColor: day === currentDay ? '#55BB8E' : 'transparent',
-                              backgroundColor: memoDays.find(d => day === d) ? '#55BB8E' : null
+                              backgroundColor: memoDays.find(d => day === d) ? '#55BB8E' : '#EFEFEF'
                             }
                             return (
                                 <Tooltip key={index} placement="top" title={day}>
-                                    <div style={dayStyle} className="day dark:bg-gray-600" />
+                                    <div style={dayStyle} className="day md:bg-gray-400 dark:bg-gray-600" />
                                 </Tooltip>
                             );
                         })}
