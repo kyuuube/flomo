@@ -8,11 +8,10 @@ import { getMemos } from './apis/memoApi';
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import './App.css';
 
-const memos = (state) => state.memos;
+const memosSelector = (state) => state.memos;
 
 function App() {
-    const { memo } = useSelector(memos, shallowEqual);
-    console.log(memo);
+    const { memos, selectTag } = useSelector(memosSelector, shallowEqual);
     const dispatch = useDispatch();
     const [memoList, setMemo] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -20,22 +19,18 @@ function App() {
         setLoading(true);
         const { list } = await getMemos().catch((e) => e);
         setLoading(false);
-        console.log(loading);
-        setMemo(list);
         dispatch({ type: 'memo/memosChanged', payload: { changeType: 'refresh', memo: list } });
     }
     useEffect(() => {
         loadMemos();
         // eslint-disable-next-line
     }, []);
-    // const memos = Array(3)
-    //     .fill('')
-    //     .map((item, _index) => ({
-    //         picture: ['https://ftp.bmp.ovh/imgs/2021/03/137101508a6af1ee.jpg'],
-    //         memo: 'La Roche-Posay Laboratoire Dermatologique',
-    //         tag: ['笔芯'],
-    //         createTime: '',
-    //     }));
+    useEffect(() => {
+        setMemo(memos);
+    }, [memos]);
+    useEffect(() => {
+        setMemo(selectTag ? memos.filter((memo) => memo.tag.find((tag) => tag === selectTag)) : memos )
+    }, [selectTag, memos]);
     return (
         <div className="w-full h-screen bg-gray-50 dark:bg-gray-800">
             <section className="container flex min-h-full bg-gray-50 dark:bg-gray-800">
@@ -48,7 +43,7 @@ function App() {
                         <FlInput />
                     </header>
                     <FlEditor />
-                    <FlMainSteam loading={false}>
+                    <FlMainSteam loading={loading}>
                         {memoList && memoList.length > 0
                             ? memoList.map((_item, index) => {
                                   return <FlMemoItem key={index} id={index} item={_item} />;

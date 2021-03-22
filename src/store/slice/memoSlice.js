@@ -1,5 +1,6 @@
 const initialState = {
     memos: [],
+    selectTag: null
 };
 
 export default function memoReducer(state = initialState, action) {
@@ -35,6 +36,13 @@ export default function memoReducer(state = initialState, action) {
                 default:
                     return state;
             }
+        }
+        case 'memo/filter': {
+            let { selectTag } = action.payload;
+            return {
+                ...state,
+                selectTag: selectTag,
+            };
         }
         default:
             return state;
