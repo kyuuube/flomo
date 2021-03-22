@@ -5,20 +5,28 @@ import FlMainSteam from './components/flMainSteam/FlMainSteam';
 import FlMemoItem from './components/flMemoItem/FlMemoItem';
 import React, { useState, useEffect } from 'react';
 import { getMemos } from './apis/memoApi';
+import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import './App.css';
 
+const memos = (state) => state.memos;
+
 function App() {
-    const [memo, setMemo] = useState(null);
+    const { memo } = useSelector(memos, shallowEqual);
+    console.log(memo);
+    const dispatch = useDispatch();
+    const [memoList, setMemo] = useState(null);
     const [loading, setLoading] = useState(false);
     async function loadMemos() {
         setLoading(true);
         const { list } = await getMemos().catch((e) => e);
         setLoading(false);
+        console.log(loading);
         setMemo(list);
+        dispatch({ type: 'memo/memosChanged', payload: { changeType: 'refresh', memo: list } });
     }
     useEffect(() => {
         loadMemos();
-    }, []);
+    });
     // const memos = Array(3)
     //     .fill('')
     //     .map((item, _index) => ({
@@ -39,10 +47,12 @@ function App() {
                         <FlInput />
                     </header>
                     <FlEditor />
-                    <FlMainSteam loading={loading}>
-                        {memo && memo.length > 0 ? memo.map((_item, index) => {
-                            return <FlMemoItem key={index} id={index} item={_item} />;
-                        }) : null }
+                    <FlMainSteam loading={false}>
+                        {memoList && memoList.length > 0
+                            ? memoList.map((_item, index) => {
+                                  return <FlMemoItem key={index} id={index} item={_item} />;
+                              })
+                            : null}
                     </FlMainSteam>
                 </main>
             </section>
