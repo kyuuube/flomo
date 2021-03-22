@@ -26,7 +26,8 @@ function App() {
     }
     useEffect(() => {
         loadMemos();
-    });
+        // eslint-disable-next-line
+    }, []);
     // const memos = Array(3)
     //     .fill('')
     //     .map((item, _index) => ({
