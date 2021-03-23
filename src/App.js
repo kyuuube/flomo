@@ -39,7 +39,7 @@ function App() {
                 </aside>
                 <main className="w-main box-border h-screen px-4">
                     <header className="flex justify-between pt-3">
-                        <span className="Redressed text-3xl">memo</span>
+                        <span className="Redressed text-3xl cursor-pointer">memo</span>
                         <FlInput />
                     </header>
                     <FlEditor />
