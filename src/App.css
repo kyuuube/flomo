@@ -5,7 +5,7 @@
 }
 
 .main-text-style {
-    font-family: 'Noto Serif SC', 'Raleway', 'PingFang SC', Helvetica, Arial,  sans-serif;
+    font-family: 'Noto Serif SC', 'Raleway', 'PingFang SC', Helvetica, Arial, sans-serif;
 }
 
 .Redressed {
@@ -21,20 +21,29 @@
     .w-aside {
         display: none;
     }
+    .ant-image {
+        width: 70px !important;
+        height: 70px;
+    }
+    .memo-item .ant-image-img {
+        width: 70px;
+        height: 70px;
+        border-radius: 4px;
+    }
 }
 
 /* 设置滚动条的样式 */
 ::-webkit-scrollbar {
-    width:6px;
+    width: 6px;
 }
 /* 滚动槽 */
 ::-webkit-scrollbar-track {
-    border-radius:10px;
+    border-radius: 10px;
 }
 /* 滚动条滑块 */
 ::-webkit-scrollbar-thumb {
-    border-radius:10px;
-    background:rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.1);
 }
 ::-webkit-scrollbar-thumb:window-inactive {
     background: rgba(224, 217, 217, 0.4);
@@ -78,5 +87,3 @@
 /*        transform: rotate(360deg);*/
 /*    }*/
 /*}*/
-
-

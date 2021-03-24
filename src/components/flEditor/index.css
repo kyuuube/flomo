@@ -1,3 +1,6 @@
+.bf-container {
+    position: static;
+}
 .bf-controlbar {
     position: absolute;
     bottom: 0;
@@ -8,9 +11,14 @@
     font-weight: 300;
 }
 .bf-controlbar .control-item {
+    display: flex;
+    align-content: center;
+    align-items: center;
     margin: 0;
     font-size: 14px;
     height: 28px;
+    color: #bfbcbc !important;
+    font-weight: 400;
 }
 
 .bf-controlbar .control-item.button {
@@ -22,4 +30,15 @@
     height: 20px;
     line-height: 20px;
     font-size: 16px;
+}
+
+.avatar-uploader, .ant-upload {
+    width: 60px !important;
+    height: 60px !important;
+    margin-bottom: 28px !important;
+}
+
+.component-wrapper .ant-upload {
+    width: 0 !important;
+    height: 0 !important;
 }

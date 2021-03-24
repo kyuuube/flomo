@@ -31,15 +31,18 @@ function App() {
     useEffect(() => {
         setMemo(selectTag ? memos.filter((memo) => memo.tag.find((tag) => tag === selectTag)) : memos )
     }, [selectTag, memos]);
+    const handleLogoClick = () => {
+        dispatch({ type: 'memo/filter', payload: { selectTag: null } });
+    }
     return (
         <div className="w-full h-screen bg-gray-50 dark:bg-gray-800">
             <section className="container flex min-h-full bg-gray-50 dark:bg-gray-800">
                 <aside className="w-aside h-screen">
                     <FlAside />
                 </aside>
-                <main className="w-main box-border h-screen px-4">
+                <main className="w-main box-border h-screen desktop:px-4 px-2">
                     <header className="flex justify-between pt-3">
-                        <span className="Redressed text-3xl cursor-pointer">memo</span>
+                        <span onClick={() => handleLogoClick()} className="Redressed text-3xl cursor-pointer">memo</span>
                         <FlInput />
                     </header>
                     <FlEditor />

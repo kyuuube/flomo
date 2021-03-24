@@ -5,15 +5,22 @@ module.exports = {
         container: false,
     },
     theme: {
-      extend: {
-        spacing: {
-          'aside': '240px',
-          'main': '720px',
-        }
-      },
+        screens: {
+            'desktop': '960px',
+            'sm': '375px',
+            'md': '960px',
+        },
+        extend: {
+            spacing: {
+                aside: '240px',
+                main: '720px',
+            },
+            minHeight: {
+                min200: '200px',
+            },
+        },
     },
-    variants: {
-    },
+    variants: {},
     plugins: [
         ({ addComponents }) => {
             addComponents({
@@ -24,7 +31,7 @@ module.exports = {
 
                     // Breakpoints
                     '@screen sm': {
-                        maxWidth: '960px',
+                        maxWidth: '375px',
                     },
                     '@screen md': {
                         maxWidth: '960px',

@@ -6,7 +6,8 @@ const antIcon = <LoadingOutlined style={{ fontSize: 24, color: '#82cab4' }} spin
 function changeHeight(f) {
     const $clientHeight = document.body.clientHeight;
     const $headerHeight = document.querySelector('header').getBoundingClientRect().height;
-    f($clientHeight - $headerHeight);
+    const $editHeight = document.querySelector('#editor').getBoundingClientRect().height;
+    f($clientHeight - $headerHeight - $editHeight);
 }
 
 // 如果使用解构赋值竟然没法渲染出来
@@ -23,7 +24,7 @@ function FlMainSteam({ loading, children }) {
         height: `${height}px`,
     };
     return loadingState ? (
-        <div style={listStyle} className="flex justify-center items-center content-center w-full">
+        <div style={listStyle} className="flex justify-center items-center content-center w-full pb-8">
             <div className='h-4 w-4'>
                 <Spin indicator={antIcon} />
             </div>
