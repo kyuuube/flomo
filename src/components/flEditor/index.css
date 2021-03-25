@@ -9,6 +9,7 @@
     box-shadow: none;
     padding: 0 8px 6px 8px;
     font-weight: 300;
+    z-index: 30;
 }
 .bf-controlbar .control-item {
     display: flex;
@@ -32,7 +33,7 @@
     font-size: 16px;
 }
 
-.avatar-uploader, .ant-upload {
+.ant-upload {
     width: 60px !important;
     height: 60px !important;
     margin-bottom: 28px !important;
@@ -41,4 +42,10 @@
 .component-wrapper .ant-upload {
     width: 0 !important;
     height: 0 !important;
+}
+
+.ml-2 .ant-upload-list-picture-card-container {
+    width: 60px !important;
+    height: 60px !important;
+    margin-bottom: 32px !important;
 }
